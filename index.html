@@ -344,8 +344,9 @@ main:focus{outline:none}
 /* Projet pédagogique : grande diapositive */
 .diapo{position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(30px,5vw,70px);align-items:center;margin-top:34px}
 .diapo-images{position:relative;aspect-ratio:5/5.2;border-radius:999px 999px 30px 30px;overflow:hidden;background:var(--sauge-clair);touch-action:pan-y}
-.diapo-images > div{position:absolute;inset:0;display:grid;place-items:center}
-.diapo-images img{width:100%;height:100%;object-fit:cover}
+.diapo-images > div{position:absolute;inset:0}
+/* photo posée en absolu sur tout le cadre : dans une grille centrée, Safari (iPhone) ne l'étirait pas à 100 % de hauteur */
+.diapo-images img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover}
 .diapo-textes{position:relative;min-height:250px}
 .diapo-texte{position:absolute;inset:0}
 .diapo-texte .num{font-family:Fraunces,Georgia,serif;font-style:italic;font-size:54px;color:#6E8A60;line-height:1;margin-bottom:14px;display:block}
